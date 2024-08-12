@@ -70,8 +70,6 @@ const CreateLink = () => {
       await schema.validate(formValues, { abortEarly: false });
       const canvas = ref.current.canvasRef.current;
       const blob = await new Promise((resolve) => canvas.toBlob(resolve));
-      console.log(blob);
-
       await fnCreateUrl(blob);
     } catch (e) {
       const newErrors = {};
@@ -103,7 +101,9 @@ const CreateLink = () => {
           <QRCode
             ref={ref}
             size={250}
-            value={`https://trimrrr-pearl.vercel.app/${formValues?.customUrl}`}
+            value={`${import.meta.env.VITE_FRONTEND_URL}${
+              formValues?.customUrl
+            }`}
           />
         )}
 

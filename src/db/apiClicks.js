@@ -19,8 +19,14 @@ const parser = new UAParser();
 
 export const storeClicks = async ({ id, originalUrl }) => {
   try {
-    const res = parser.getResult();
-    const device = res.type || "desktop";
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    let device = "device";
+
+    if (/android|iphone|ipad|ipod/i.test(userAgent)) {
+      device = "mobile";
+    } else if (/windows|macintosh/i.test(userAgent)) {
+      device = "laptop";
+    }
 
     const response = await fetch("https://ipapi.co/json");
     const { city, country_name: country } = await response.json();

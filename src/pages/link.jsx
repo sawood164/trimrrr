@@ -71,11 +71,12 @@ const Link = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimrrr-pearl.vercel.app/${link}`}
+            href={`${import.meta.env.VITE_FRONTEND_URL}${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://trimrrr-pearl.vercel.app/{link}
+            {import.meta.env.VITE_FRONTEND_URL}
+            {link}
           </a>
           <a
             href={url?.original_url}
@@ -93,7 +94,7 @@ const Link = () => {
               variant="ghost"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://trimrrr-pearl.vercel.app/${url?.short_url}`
+                  `${import.meta.env.VITE_FRONTEND_URL}${url?.short_url}`
                 )
               }
             >

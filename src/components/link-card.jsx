@@ -22,6 +22,7 @@ const LinkCard = ({ url, fetchUrls }) => {
   };
 
   const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, url?.id);
+  console.log(import.meta.env.VITE_FRONTEND_URL);
 
   return (
     <div className="flex flex-col md:flex-row gap-5 border p-4 bg-gray-900 rounded-lg">
@@ -35,7 +36,7 @@ const LinkCard = ({ url, fetchUrls }) => {
           {url?.title}
         </span>
         <span className="text-2xl text-blue-400 font-bold hover:underline cursor-pointer">
-          https://trimrrr-pearl.vercel.app/
+          {import.meta.env.VITE_FRONTEND_URL}
           {url?.custom_url ? url?.custom_url : url.short_url}
         </span>
         <span className="flex items-center gap-1 hover:underline cursor-pointer">
@@ -51,7 +52,7 @@ const LinkCard = ({ url, fetchUrls }) => {
           variant="ghost"
           onClick={() =>
             navigator.clipboard.writeText(
-              `https://trimrrr-pearl.vercel.app/${url?.short_url}`
+              `${import.meta.env.VITE_FRONTEND_URL}${url?.short_url}`
             )
           }
         >
