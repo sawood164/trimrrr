@@ -103,7 +103,7 @@ const CreateLink = () => {
           <QRCode
             ref={ref}
             size={250}
-            value={`trimrrr.in/${formValues?.customUrl}`}
+            value={`https://trimrrr-pearl.vercel.app/${formValues?.customUrl}`}
           />
         )}
 
