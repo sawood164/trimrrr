@@ -26,12 +26,21 @@ const Header = () => {
     <>
       <nav className="py-4 flex justify-between items-center">
         <Link to="/">
-          <img src="/logo.png" className="h-16" alt="Trimrrr logo" />
+          <img
+            src="/bbbb.png"
+            className="h-16 rounded-full border-4 border-transparent hover:border-blue-500 shadow-md hover:shadow-xl transition-all duration-500 ease-in-out hover:blur-sm hover:brightness-125"
+            alt="Trimrrr logo"
+          />
         </Link>
 
         <div>
           {!user ? (
-            <Button onClick={() => navigate("/auth")}>Login</Button>
+            <Button
+              className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-300"
+              onClick={() => navigate("/auth")}
+            >
+              Login
+            </Button>
           ) : (
             <DropdownMenu>
               <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">

@@ -127,7 +127,7 @@ const CreateLink = () => {
           <Card className="p-2">trimrrr.in</Card> /
           <Input
             id="customUrl"
-            placeholder="Custom Link (optional)"
+            placeholder="Custom Link"
             value={formValues.customUrl}
             onChange={handleChange}
           />
